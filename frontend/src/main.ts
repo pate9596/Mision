@@ -1,10 +1,7 @@
-import { provideZoneChangeDetection } from "@angular/core";
+import 'zone.js';
+
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideEventPlugins } from '@taiga-ui/event-plugins';
-
 import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
 
-bootstrapApplication(AppComponent, {
-  providers: [provideZoneChangeDetection(),provideAnimations(), provideEventPlugins()],
-});
+bootstrapApplication(AppComponent, appConfig);

@@ -1,213 +1,134 @@
-<canvas id="bgCanvas"></canvas>
+<canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
 
-<div class="page">
-  <header class="hero">
-    <div class="hero__grid">
-      <div class="hero__left">
-        <div class="avatar-wrap">
-          <img class="avatar" src="assets/images/foto.jpg" alt="Foto perfil" />
-          <div class="avatar-ring"></div>
-          <div class="avatar-glow"></div>
-        </div>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top">Portafolio</a>
 
-        <div class="hero__copy">
-          <p class="kicker">👋 Hola, soy</p>
-          <h1 tuiTitle="l" class="title">Deelan Maldonado</h1>
-          <p class="subtitle">Desarrollador Full Stack · Analista de datos</p>
+    <nav class="nav__links">
+      <a class="nav__link" href="#about">Sobre mí</a>
+      <a class="nav__link" href="#exp">Experiencia</a>
+      <a class="nav__link" href="#projects">Proyectos</a>
+      <a class="nav__link" href="#contact">Contacto</a>
+    </nav>
 
-          <p class="lead">
-            Construyo apps modernas con Angular, Django y Python. Me obsesiona el diseño limpio,
-            arquitectura ordenada y productos que se sienten rápidos y prolijos.
-          </p>
-
-          <div class="hero__cta">
-            <a
-              tuiButton
-              appearance="primary"
-              size="l"
-              class="cta"
-              href="https://wa.me/+56977828687"
-              target="_blank"
-              rel="noreferrer"
-            >
-              📲 Hablemos
-            </a>
-
-            <a
-              tuiButton
-              appearance="secondary"
-              size="l"
-              class="cta"
-              href="mailto:deelanmaldonado9@gmail.com"
-            >
-              ✉️ Email
-            </a>
-
-            <a tuiLink class="cta-link" target="_blank" rel="noreferrer" href="https://github.com/">
-              GitHub →
-            </a>
-          </div>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="stat__num">+</div>
-              <div class="stat__label">Proyectos</div>
-            </div>
-            <div class="stat">
-              <div class="stat__num">ETL</div>
-              <div class="stat__label">y dashboards</div>
-            </div>
-            <div class="stat">
-              <div class="stat__num">Full</div>
-              <div class="stat__label">stack</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__right">
-        <div class="glass card">
-          <div class="card__top">
-            <h2 tuiTitle="m" class="card__title">Stack principal</h2>
-            <span class="chip">2025</span>
-          </div>
-
-          <div class="skills">
-            @for (skill of habilidades; track skill) {
-              <span tuiBadge class="skill-pill">{{ skill }}</span>
-            }
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="mini">
-            <div class="mini__item">
-              <div class="dot"></div>
-              <div>
-                <div class="mini__title">Arquitectura</div>
-                <div class="mini__text">Orden, capas y buenas prácticas</div>
-              </div>
-            </div>
-
-            <div class="mini__item">
-              <div class="dot dot--alt"></div>
-              <div>
-                <div class="mini__title">Data</div>
-                <div class="mini__text">ETL, KPIs, Looker/BI</div>
-              </div>
-            </div>
-
-            <div class="mini__item">
-              <div class="dot dot--muted"></div>
-              <div>
-                <div class="mini__title">UI/UX</div>
-                <div class="mini__text">Interfaces limpias y usables</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="floating">
-          <div class="bubble b1"></div>
-          <div class="bubble b2"></div>
-          <div class="bubble b3"></div>
-        </div>
-      </div>
+    <div class="nav__social">
+      <a class="nav__icon" href="https://github.com/pate9596" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="nav__icon" href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="content">
-    <!-- SOBRE MI -->
-    <section class="glass section">
-      <div class="section__head">
-        <h2 tuiTitle="m">Sobre mí</h2>
-        <span class="chip chip--soft">Enfoque: producto + calidad</span>
-      </div>
+<main id="top" class="page">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__content">
+      <img class="avatar" src="assets/images/foto.jpg" alt="Foto de perfil" />
 
-      <p class="text">
-        Soy un desarrollador con experiencia creando aplicaciones web completas, desde APIs en Django
-        hasta frontends modernos con Angular Standalone. Me gusta aprender rápido, iterar y dejar
-        las cosas bien terminadas.
+      <h1 class="hero__title">Hola, soy <span class="accent">Deelan</span></h1>
+      <p class="hero__subtitle">
+        Desarrollo web y datos: construyo apps, automatizo procesos y dejo todo ordenadito 🔧📊
       </p>
-    </section>
 
-    <div class="grid-2">
-      <!-- PROYECTOS -->
-      <section class="glass section">
-        <div class="section__head">
-          <h2 tuiTitle="m">Proyectos</h2>
-          <span class="chip">Seleccionados</span>
-        </div>
+      <div class="hero__cta">
+        <a tuiLink href="#projects">Ver proyectos</a>
 
-        <div class="cards">
-          @for (p of proyectos; track p.titulo) {
-            <article class="proj">
-              <div class="proj__title">{{ p.titulo }}</div>
-              <div class="proj__desc">{{ p.descripcion }}</div>
+        <a tuiLink class="link" href="#contact">Contáctame</a>
+      </div>
 
-              <div class="proj__actions">
-                <a tuiLink [href]="p.link" target="_blank" rel="noreferrer">Ver proyecto →</a>
-              </div>
-            </article>
-          }
-        </div>
-      </section>
+      <div class="chips">
+        <span class="chip">Angular</span>
+        <span class="chip">Python</span>
+        <span class="chip">Django</span>
+        <span class="chip">Laravel</span>
+        <span class="chip">Docker</span>
+        <span class="chip">SQL</span>
+      </div>
+    </div>
+  </section>
 
-      <!-- EXPERIENCIA -->
-      <section class="glass section">
-        <div class="section__head">
-          <h2 tuiTitle="m">Experiencia</h2>
-          <span class="chip chip--soft">Timeline</span>
-        </div>
-
-        <div class="timeline">
-          @for (exp of experiencia; track exp.puesto) {
-            <div class="tl">
-              <div class="tl__line"></div>
-              <div class="tl__node"></div>
-
-              <div class="tl__content">
-                <div class="tl__top">
-                  <div class="tl__role">{{ exp.puesto }}</div>
-                  <span class="tl__time">{{ exp.duracion }}</span>
-                </div>
-
-                <div class="tl__company">{{ exp.empresa }}</div>
-                <div class="tl__desc">{{ exp.descripcion }}</div>
-              </div>
-            </div>
-          }
-        </div>
-      </section>
+  <!-- SOBRE MI -->
+  <section id="about" class="section">
+    <div class="section__head">
+      <h2 class="section__title">Sobre mí</h2>
+      <p class="section__hint">Un resumen rápido de lo que hago y en qué destaco.</p>
     </div>
 
-    <!-- CONTACTO -->
-    <section class="glass section contact">
-      <div class="section__head">
-        <h2 tuiTitle="m">Contacto</h2>
-        <span class="chip">Disponible</span>
+    <div class="grid2">
+      <div class="card">
+        <h3 class="card__title">Perfil</h3>
+        <p class="card__text">
+          Soy practicante en desarrollo web y me muevo entre frontend, backend y datos.
+          Me gusta dejar los proyectos con arquitectura clara, buena UI y procesos automatizados.
+        </p>
       </div>
 
-      <div class="contact__grid">
-        <div class="contact__item">
-          <div class="contact__label">Email</div>
-          <a tuiLink href="mailto:deelanmaldonado9@gmail.com">deelanmaldonado9@gmail.com</a>
-        </div>
-
-        <div class="contact__item">
-          <div class="contact__label">LinkedIn</div>
-          <a tuiLink target="_blank" rel="noreferrer" href="https://linkedin.com">linkedin.com</a>
-        </div>
-
-        <div class="contact__item">
-          <div class="contact__label">WhatsApp</div>
-          <a tuiLink target="_blank" rel="noreferrer" href="https://wa.me/+56977828687">Abrir chat →</a>
+      <div class="card">
+        <h3 class="card__title">Habilidades</h3>
+        <div class="chips chips--wrap">
+          <span class="chip" *ngFor="let h of habilidades">{{ h }}</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <span>© {{ currentYear }} · Hecho con Angular + Taiga UI</span>
-    </footer>
-  </main>
-</div>
+  <!-- EXPERIENCIA -->
+  <section id="exp" class="section">
+    <div class="section__head">
+      <h2 class="section__title">Experiencia</h2>
+      <p class="section__hint">Lo más relevante y directo al punto.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="tl-item" *ngFor="let e of experiencia">
+        <div class="tl-dot"></div>
+        <div class="card tl-card">
+          <div class="tl-top">
+            <h3 class="card__title">{{ e.puesto }}</h3>
+            <span class="muted">{{ e.duracion }}</span>
+          </div>
+          <div class="muted">{{ e.empresa }}</div>
+          <p class="card__text" style="white-space: pre-line;">{{ e.descripcion }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="projects" class="section">
+    <div class="section__head">
+      <h2 class="section__title">Proyectos</h2>
+      <p class="section__hint">Algunos proyectos en los que he trabajado.</p>
+    </div>
+
+    <div class="grid3">
+      <article class="card project" *ngFor="let p of proyectos">
+        <h3 class="card__title">{{ p.titulo }}</h3>
+        <p class="card__text">{{ p.descripcion }}</p>
+
+        <div class="project__actions">
+          <a tuiLink [href]="p.link" target="_blank" rel="noreferrer">Ver</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contact" class="section section--last">
+    <div class="section__head">
+      <h2 class="section__title">Contacto</h2>
+      <p class="section__hint">¿Hacemos algo bacán? Escríbeme.</p>
+    </div>
+
+    <div class="card contact">
+      <p class="card__text">
+        📩 Email: <strong>deelanmaldonado9@gmail.com</strong><br />
+        📍 Chile · Remoto / Presencial
+      </p>
+
+      <div class="hero__cta">
+        <a tuiLink href="mailto:deelanmaldonado9@gmail.com">Enviar correo</a>
+        <a tuiLink href="https://github.com/pate9596" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>

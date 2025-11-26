@@ -2,12 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Frontend</title>
+  <title>Portafolio</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <link rel="icon" href="assets/images/icono.jpg" type="image/jpg" />
+  <link rel="shortcut icon" href="assets/images/icono.jpg" type="image/jpg" />
 </head>
 <body>
   <app-root></app-root>
+
+  
+  <script>
+    (function(){
+      const href = 'assets/images/icono.jpg';
+      function setFavicon(h){
+        let link = document.querySelector('link[rel="icon"]') || document.createElement('link');
+        link.type = 'image/jpeg';
+        link.rel = 'icon';
+        link.href = h;
+        document.head.appendChild(link);
+
+        let shortcut = document.querySelector('link[rel="shortcut icon"]') || document.createElement('link');
+        shortcut.type = 'image/jpeg';
+        shortcut.rel = 'shortcut icon';
+        shortcut.href = h;
+        document.head.appendChild(shortcut);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => setFavicon(href));
+      } else setFavicon(href);
+    })();
+  </script>
+
 </body>
 </html>

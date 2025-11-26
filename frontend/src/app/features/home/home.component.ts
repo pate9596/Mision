@@ -1,4 +1,5 @@
 import { Component, OnInit, PLATFORM_ID, Inject, HostListener, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 
 import { TuiButton, TuiTitle, TuiLink } from '@taiga-ui/core';
@@ -9,10 +10,11 @@ type Particle = { x: number; y: number; r: number; dx: number; dy: number };
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TuiButton, TuiTitle, TuiLink, TuiBadge],
+  imports: [CommonModule, TuiButton, TuiTitle, TuiLink, TuiBadge],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
+
 export class HomeComponent implements OnInit, OnDestroy {
   habilidades = [
     'Angular',
@@ -25,34 +27,48 @@ export class HomeComponent implements OnInit, OnDestroy {
     'Git / GitHub',
   ];
 
-  proyectos = [
+   proyectos = [
     {
-      titulo: 'Sistema de Barbería',
-      descripcion: 'Sistema completo con agenda, barberos y notificaciones.',
-      link: 'https://tu-proyecto.com',
+      titulo: 'Rendiflow (App de gestión de boletas/gastos)',
+      descripcion:
+        'Plataforma para captura y gestión de rendiciones: app móvil (React Native/Expo) + backend (Python Clean Architecture) + ETL diario en contenedores y tableros BI. Enfoque en arquitectura, métricas y automatización.',
+      link: 'https://github.com/tori-labs/rendiflow', // ajusta si es privado
     },
     {
-      titulo: 'App de Notas',
-      descripcion: 'Web para gestionar notas académicas con MongoDB.',
-      link: 'https://otro-proyecto.com',
+      titulo: 'Sistema de reservas y gestión para barberías',
+      descripcion:
+        'Sistema web con gestión de clientes, servicios y agenda. Backend en Laravel, integración con Docker y despliegue orientado a entorno académico/capstone.',
+      link: 'https://tu-proyecto.com', // cambia por repositorio/demo real
+    },
+    {
+      titulo: 'GestionNotas (Notas académicas)',
+      descripcion:
+        'Aplicación web para registro y gestión de notas académicas con .NET Razor Pages + MongoDB. Incluye autenticación/usuarios y CRUD completo.',
+      link: 'https://github.com/pate9596/Notas',
     },
   ];
 
   experiencia = [
     {
-      puesto: 'Analista de datos',
-      empresa: 'Tech Solutions',
-      duracion: '2022 - Presente',
-      descripcion: 'Análisis de grandes volúmenes de datos para optimizar procesos empresariales.',
+      puesto: 'Practicante / Analista BI - Datos',
+      empresa: 'Televisión Nacional de Chile (TVN)',
+      duracion: '2025 (fechas exactas según tu CV)', // pon mes/año real
+      descripcion:
+        '• Integración y migración de datos (p. ej., Talana HR API → ETL en Python) hacia BD relacionales.\n' +
+        '• Modelado y preparación de datos para análisis y visualización (Looker Studio).\n' +
+        '• Automatización de procesos (jobs/containers) y mejoras de calidad de datos (validaciones, limpieza, trazabilidad).',
     },
     {
-      puesto: 'Desarrollador Junior',
-      empresa: 'Web Creators',
-      duracion: '2020 - 2022',
-      descripcion: 'Desarrollo de aplicaciones web utilizando Angular y Django.',
+      puesto: 'Desarrollador Web (Práctica)',
+      empresa: 'Almagro',
+      duracion: '2024 (fechas exactas según tu CV)', // pon mes/año real
+      descripcion:
+        '• Desarrollo de funcionalidades web y mantenimiento evolutivo.\n' +
+        '• Trabajo con frontend y backend (Angular/Django según corresponda a tu CV).\n' +
+        '• Enfoque en buenas prácticas: control de versiones, corrección de bugs y mejoras UI.',
     },
-    
   ];
+
   
 
   private canvas: HTMLCanvasElement | null = null;
