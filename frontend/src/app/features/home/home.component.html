@@ -1,0 +1,213 @@
+<canvas id="bgCanvas"></canvas>
+
+<div class="page">
+  <header class="hero">
+    <div class="hero__grid">
+      <div class="hero__left">
+        <div class="avatar-wrap">
+          <img class="avatar" src="assets/images/foto.jpg" alt="Foto perfil" />
+          <div class="avatar-ring"></div>
+          <div class="avatar-glow"></div>
+        </div>
+
+        <div class="hero__copy">
+          <p class="kicker">👋 Hola, soy</p>
+          <h1 tuiTitle="l" class="title">Deelan Maldonado</h1>
+          <p class="subtitle">Desarrollador Full Stack · Analista de datos</p>
+
+          <p class="lead">
+            Construyo apps modernas con Angular, Django y Python. Me obsesiona el diseño limpio,
+            arquitectura ordenada y productos que se sienten rápidos y prolijos.
+          </p>
+
+          <div class="hero__cta">
+            <a
+              tuiButton
+              appearance="primary"
+              size="l"
+              class="cta"
+              href="https://wa.me/+56977828687"
+              target="_blank"
+              rel="noreferrer"
+            >
+              📲 Hablemos
+            </a>
+
+            <a
+              tuiButton
+              appearance="secondary"
+              size="l"
+              class="cta"
+              href="mailto:deelanmaldonado9@gmail.com"
+            >
+              ✉️ Email
+            </a>
+
+            <a tuiLink class="cta-link" target="_blank" rel="noreferrer" href="https://github.com/">
+              GitHub →
+            </a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num">+</div>
+              <div class="stat__label">Proyectos</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">ETL</div>
+              <div class="stat__label">y dashboards</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">Full</div>
+              <div class="stat__label">stack</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="glass card">
+          <div class="card__top">
+            <h2 tuiTitle="m" class="card__title">Stack principal</h2>
+            <span class="chip">2025</span>
+          </div>
+
+          <div class="skills">
+            @for (skill of habilidades; track skill) {
+              <span tuiBadge class="skill-pill">{{ skill }}</span>
+            }
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="mini">
+            <div class="mini__item">
+              <div class="dot"></div>
+              <div>
+                <div class="mini__title">Arquitectura</div>
+                <div class="mini__text">Orden, capas y buenas prácticas</div>
+              </div>
+            </div>
+
+            <div class="mini__item">
+              <div class="dot dot--alt"></div>
+              <div>
+                <div class="mini__title">Data</div>
+                <div class="mini__text">ETL, KPIs, Looker/BI</div>
+              </div>
+            </div>
+
+            <div class="mini__item">
+              <div class="dot dot--muted"></div>
+              <div>
+                <div class="mini__title">UI/UX</div>
+                <div class="mini__text">Interfaces limpias y usables</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating">
+          <div class="bubble b1"></div>
+          <div class="bubble b2"></div>
+          <div class="bubble b3"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- SOBRE MI -->
+    <section class="glass section">
+      <div class="section__head">
+        <h2 tuiTitle="m">Sobre mí</h2>
+        <span class="chip chip--soft">Enfoque: producto + calidad</span>
+      </div>
+
+      <p class="text">
+        Soy un desarrollador con experiencia creando aplicaciones web completas, desde APIs en Django
+        hasta frontends modernos con Angular Standalone. Me gusta aprender rápido, iterar y dejar
+        las cosas bien terminadas.
+      </p>
+    </section>
+
+    <div class="grid-2">
+      <!-- PROYECTOS -->
+      <section class="glass section">
+        <div class="section__head">
+          <h2 tuiTitle="m">Proyectos</h2>
+          <span class="chip">Seleccionados</span>
+        </div>
+
+        <div class="cards">
+          @for (p of proyectos; track p.titulo) {
+            <article class="proj">
+              <div class="proj__title">{{ p.titulo }}</div>
+              <div class="proj__desc">{{ p.descripcion }}</div>
+
+              <div class="proj__actions">
+                <a tuiLink [href]="p.link" target="_blank" rel="noreferrer">Ver proyecto →</a>
+              </div>
+            </article>
+          }
+        </div>
+      </section>
+
+      <!-- EXPERIENCIA -->
+      <section class="glass section">
+        <div class="section__head">
+          <h2 tuiTitle="m">Experiencia</h2>
+          <span class="chip chip--soft">Timeline</span>
+        </div>
+
+        <div class="timeline">
+          @for (exp of experiencia; track exp.puesto) {
+            <div class="tl">
+              <div class="tl__line"></div>
+              <div class="tl__node"></div>
+
+              <div class="tl__content">
+                <div class="tl__top">
+                  <div class="tl__role">{{ exp.puesto }}</div>
+                  <span class="tl__time">{{ exp.duracion }}</span>
+                </div>
+
+                <div class="tl__company">{{ exp.empresa }}</div>
+                <div class="tl__desc">{{ exp.descripcion }}</div>
+              </div>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACTO -->
+    <section class="glass section contact">
+      <div class="section__head">
+        <h2 tuiTitle="m">Contacto</h2>
+        <span class="chip">Disponible</span>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__item">
+          <div class="contact__label">Email</div>
+          <a tuiLink href="mailto:deelanmaldonado9@gmail.com">deelanmaldonado9@gmail.com</a>
+        </div>
+
+        <div class="contact__item">
+          <div class="contact__label">LinkedIn</div>
+          <a tuiLink target="_blank" rel="noreferrer" href="https://linkedin.com">linkedin.com</a>
+        </div>
+
+        <div class="contact__item">
+          <div class="contact__label">WhatsApp</div>
+          <a tuiLink target="_blank" rel="noreferrer" href="https://wa.me/+56977828687">Abrir chat →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© {{ currentYear }} · Hecho con Angular + Taiga UI</span>
+    </footer>
+  </main>
+</div>
