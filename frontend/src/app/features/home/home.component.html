@@ -5,7 +5,7 @@
     <a class="brand" href="#top">Portafolio</a>
 
     <nav class="nav__links">
-      <a class="nav__link" href="#about">Sobre mí</a>
+      <a class="nav__link" href="#about">Perfil</a>
       <a class="nav__link" href="#exp">Experiencia</a>
       <a class="nav__link" href="#projects">Proyectos</a>
       <a class="nav__link" href="#contact">Contacto</a>
@@ -26,48 +26,102 @@
 
       <h1 class="hero__title">Hola, soy <span class="accent">Deelan</span></h1>
       <p class="hero__subtitle">
-        Desarrollo web y datos: construyo apps, automatizo procesos y dejo todo ordenadito 🔧📊
+        Estudiante de Ingeniería en Informática enfocado en desarrollo web/móvil, automatización QA y análisis de datos.
+        Me interesa diseñar soluciones mantenibles, medibles y orientadas a calidad.
       </p>
 
       <div class="hero__cta">
         <a tuiLink href="#projects">Ver proyectos</a>
-
-        <a tuiLink class="link" href="#contact">Contáctame</a>
+        <a tuiLink class="link" href="#contact">Contacto</a>
       </div>
 
-      <div class="chips">
-        <span class="chip">Angular</span>
-        <span class="chip">Python</span>
-        <span class="chip">Django</span>
-        <span class="chip">Laravel</span>
-        <span class="chip">Docker</span>
-        <span class="chip">SQL</span>
-      </div>
     </div>
   </section>
 
   <!-- SOBRE MI -->
   <section id="about" class="section">
     <div class="section__head">
-      <h2 class="section__title">Sobre mí</h2>
-      <p class="section__hint">Un resumen rápido de lo que hago y en qué destaco.</p>
+      <h2 class="section__title">Perfil</h2>
+      <p class="section__hint">Enfoque, intereses y forma de trabajo.</p>
     </div>
 
     <div class="grid2">
       <div class="card">
-        <h3 class="card__title">Perfil</h3>
+        <h3 class="card__title">Sobre mí</h3>
         <p class="card__text">
-          Soy practicante en desarrollo web y me muevo entre frontend, backend y datos.
-          Me gusta dejar los proyectos con arquitectura clara, buena UI y procesos automatizados.
+          Soy estudiante de último año de Ingeniería en Informática e iniciando mi experiencia profesional en TI.
+          Me interesa especialmente el desarrollo web y móvil, la automatización de pruebas y el análisis de datos,
+          porque me gusta entender los sistemas “end-to-end” y mejorar claridad, confiabilidad y valor para el usuario.
+          <br /><br />
+          En mi formación me he enfocado en construir soluciones completas: desde backend y lógica de negocio, hasta
+          validación mediante pruebas y uso de datos para medir resultados. En mi práctica en TVN reforcé esta mirada
+          participando en tareas asociadas a flujos de información y análisis, confirmando el tipo de trabajo que busco.
+          <br /><br />
+          Estoy comprometido con la mejora continua y con aportar con responsabilidad, buenas prácticas y aprendizaje
+          constante en cada proyecto.
         </p>
       </div>
 
-      <div class="card">
-        <h3 class="card__title">Habilidades</h3>
-        <div class="chips chips--wrap">
-          <span class="chip" *ngFor="let h of habilidades">{{ h }}</span>
+    <div class="card">
+      <h3 class="card__title">Stack / habilidades</h3>
+
+      <div class="stack">
+        <div class="stack__group">
+          <div class="stack__label">Lenguajes</div>
+          <div class="chips chips--wrap">
+            <span class="chip">Java</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Python</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+          </div>
+        </div>
+
+        <div class="stack__group">
+          <div class="stack__label">Frontend</div>
+          <div class="chips chips--wrap">
+            <span class="chip">Angular</span>
+            <span class="chip">React</span>
+            <span class="chip">React Native</span>
+            <span class="chip">Expo</span>
+            <span class="chip">Vite</span>
+          </div>
+        </div>
+
+        <div class="stack__group">
+          <div class="stack__label">Backend</div>
+          <div class="chips chips--wrap">
+            <span class="chip">.NET</span>
+            <span class="chip">Django</span>
+          </div>
+        </div>
+
+        <div class="stack__group">
+          <div class="stack__label">Bases de datos</div>
+          <div class="chips chips--wrap">
+            <span class="chip">MySQL</span>
+            <span class="chip">Oracle</span>
+            <span class="chip">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="stack__group">
+          <div class="stack__label">BI / Dashboards</div>
+          <div class="chips chips--wrap">
+            <span class="chip">Looker Studio</span>
+            <span class="chip">Power BI</span>
+          </div>
+        </div>
+        <div class="stack__group">
+          <div class="stack__label">Tooling / DevOps</div>
+          <div class="chips chips--wrap">
+            <span class="chip">Docker</span>
+            <span class="chip">Git / GitHub</span>
+          </div>
         </div>
       </div>
+    </div>
+
     </div>
   </section>
 
@@ -75,7 +129,7 @@
   <section id="exp" class="section">
     <div class="section__head">
       <h2 class="section__title">Experiencia</h2>
-      <p class="section__hint">Lo más relevante y directo al punto.</p>
+      <p class="section__hint">Prácticas y trabajo aplicado en entornos reales.</p>
     </div>
 
     <div class="timeline">
@@ -97,7 +151,7 @@
   <section id="projects" class="section">
     <div class="section__head">
       <h2 class="section__title">Proyectos</h2>
-      <p class="section__hint">Algunos proyectos en los que he trabajado.</p>
+      <p class="section__hint">Implementaciones destacadas (repositorios, casos y prototipos).</p>
     </div>
 
     <div class="grid3">
@@ -106,7 +160,7 @@
         <p class="card__text">{{ p.descripcion }}</p>
 
         <div class="project__actions">
-          <a tuiLink [href]="p.link" target="_blank" rel="noreferrer">Ver</a>
+          <a tuiLink [href]="p.link" target="_blank" rel="noreferrer">Repositorio</a>
         </div>
       </article>
     </div>
@@ -116,7 +170,7 @@
   <section id="contact" class="section section--last">
     <div class="section__head">
       <h2 class="section__title">Contacto</h2>
-      <p class="section__hint">¿Hacemos algo bacán? Escríbeme.</p>
+      <p class="section__hint"></p>
     </div>
 
     <div class="card contact">
@@ -131,4 +185,20 @@
       </div>
     </div>
   </section>
+  <footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <span class="muted">
+        Built with <strong>Angular</strong> + <strong>Taiga UI</strong> · Deployed on <strong>Vercel</strong>
+      </span>
+    </div>
+
+    <div class="footer__right">
+      <a tuiLink href="https://vercel.com" target="_blank" rel="noreferrer">Vercel</a>
+      <span class="muted">·</span>
+      <a tuiLink href="https://taiga-ui.dev" target="_blank" rel="noreferrer">Taiga UI</a>
+    </div>
+  </div>
+</footer>
+
 </main>

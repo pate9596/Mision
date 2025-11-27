@@ -16,57 +16,66 @@ type Particle = { x: number; y: number; r: number; dx: number; dy: number };
 })
 
 export class HomeComponent implements OnInit, OnDestroy {
-  habilidades = [
-    'Angular',
-    'Django',
-    'Python',
-    'JavaScript',
-    'React / React Native',
-    'MySQL / MongoDB / Oracle',
-    'Docker',
-    'Git / GitHub',
+  stack = [
+    { label: 'Lenguajes', items: ['Java', 'JavaScript', 'Python', 'HTML', 'CSS'] },
+    { label: 'Frontend', items: ['Angular', 'React', 'React Native', 'Expo', 'Vite'] },
+    { label: 'Backend', items: ['.NET', 'Django'] },
+    { label: 'Bases de datos', items: ['MySQL', 'Oracle', 'MongoDB'] },
+    { label: 'BI / Dashboards', items: ['Looker Studio', 'Power BI'] },
+    { label: 'Tooling / DevOps', items: ['Docker', 'Git / GitHub'] },
+
   ];
 
-   proyectos = [
+
+  proyectos = [
     {
       titulo: 'Rendiflow (App de gestión de boletas/gastos)',
       descripcion:
         'Plataforma para captura y gestión de rendiciones: app móvil (React Native/Expo) + backend (Python Clean Architecture) + ETL diario en contenedores y tableros BI. Enfoque en arquitectura, métricas y automatización.',
-      link: 'https://github.com/tori-labs/rendiflow', // ajusta si es privado
+      link: 'https://github.com/tori-labs/rendiflow',
     },
     {
-      titulo: 'Sistema de reservas y gestión para barberías',
+      titulo: 'App Chuck (Flutter)',
       descripcion:
-        'Sistema web con gestión de clientes, servicios y agenda. Backend en Laravel, integración con Docker y despliegue orientado a entorno académico/capstone.',
-      link: 'https://tu-proyecto.com', // cambia por repositorio/demo real
+        'Aplicación móvil en Flutter que consume una API de frases de Chuck Norris y una API de traducción para mostrar frases en español. Incluye interfaz simple y almacenamiento local.',
+      link: 'https://github.com/pate9596/app_chuck',
     },
     {
-      titulo: 'GestionNotas (Notas académicas)',
+      titulo: 'Ferretería eCommerce (Django + SQLite)',
       descripcion:
-        'Aplicación web para registro y gestión de notas académicas con .NET Razor Pages + MongoDB. Incluye autenticación/usuarios y CRUD completo.',
-      link: 'https://github.com/pate9596/Notas',
+        'E-commerce universitario con integración de APIs para cambio de moneda y WebPay para aprobación de pagos. Incluye autenticación de usuarios y restablecimiento de contraseña vía email.',
+      link: 'https://github.com/pate9596/Ferremas',
+    },
+    {
+      titulo: 'Sistema de Gestión de Notas (Full Stack .NET + React + Vite + MongoDB)',
+      descripcion:
+        'App web para gestión de notas personales con Google OAuth/registro de usuarios. Backend .NET 9 (API REST + JWT) y frontend React + Vite + TypeScript, con CRUD por usuario y persistencia en MongoDB.',
+      link: 'https://github.com/pate9596/GestionnNotas',
     },
   ];
+
 
   experiencia = [
     {
       puesto: 'Practicante / Analista BI - Datos',
       empresa: 'Televisión Nacional de Chile (TVN)',
-      duracion: '2025 (fechas exactas según tu CV)', // pon mes/año real
+      duracion: 'Agosto 2025 - Octubre 2025', // pon mes/año real
       descripcion:
         '• Integración y migración de datos (p. ej., Talana HR API → ETL en Python) hacia BD relacionales.\n' +
         '• Modelado y preparación de datos para análisis y visualización (Looker Studio).\n' +
         '• Automatización de procesos (jobs/containers) y mejoras de calidad de datos (validaciones, limpieza, trazabilidad).',
     },
     {
-      puesto: 'Desarrollador Web (Práctica)',
-      empresa: 'Almagro',
-      duracion: '2024 (fechas exactas según tu CV)', // pon mes/año real
+      puesto: 'Práctica Laboral en Ingeniería en Informática',
+      empresa: 'ALMAGRO S.A.',
+      duracion: 'Enero 2024 - Marzo 2024',
       descripcion:
-        '• Desarrollo de funcionalidades web y mantenimiento evolutivo.\n' +
-        '• Trabajo con frontend y backend (Angular/Django según corresponda a tu CV).\n' +
-        '• Enfoque en buenas prácticas: control de versiones, corrección de bugs y mejoras UI.',
+        '• Realicé testing de plataformas, ejecuté casos de prueba y reporté incidencias a los equipos de desarrollo.\n' +
+        '• Creé mockups y recreación de vistas de aplicaciones utilizando Miro.\n' +
+        '• Gestioné tareas con Microsoft Planner bajo metodologías ágiles (Scrum y Kanban).\n' +
+        '• Estudié metodologías de construcción como BIM y Gemelos Digitales (Digital Twin).',
     },
+
   ];
 
   

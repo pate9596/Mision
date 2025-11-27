@@ -232,3 +232,45 @@
   .grid3 { grid-template-columns: 1fr; }
   .nav__links { display: none; } /* luego hacemos menú hamburguesa si quieres */
 }
+.stack {
+  display: grid;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.stack__label {
+  font-size: 12px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.62);
+  margin-bottom: 8px;
+}
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 26px 18px 34px;
+}
+
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
