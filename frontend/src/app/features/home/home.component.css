@@ -274,3 +274,11 @@
     align-items: flex-start;
   }
 }
+
+.brand_icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-right: 8px;
+  vertical-align: middle;
+}

@@ -2,8 +2,12 @@
 
 <header class="nav">
   <div class="nav__inner">
-    <a class="brand" href="#top">Portafolio</a>
-
+   
+    <a class="brand" href="#top">
+      <img src="../../../assets/images/icono.png" alt="Logo" class="brand_icon"/>
+      <span>Portafolio</span>
+    </a>
+    
     <nav class="nav__links">
       <a class="nav__link" href="#about">Perfil</a>
       <a class="nav__link" href="#exp">Experiencia</a>
@@ -26,9 +30,11 @@
 
       <h1 class="hero__title">Hola, soy <span class="accent">Deelan</span></h1>
       <p class="hero__subtitle">
-        Estudiante de Ingeniería en Informática enfocado en desarrollo web/móvil, automatización QA y análisis de datos.
-        Me interesa diseñar soluciones mantenibles, medibles y orientadas a calidad.
+        Ingeniero en Informática recién egresado, enfocado en desarrollo web y móvil.
+        Me interesa construir aplicaciones completas, con buenas prácticas, calidad de código
+        y soluciones orientadas a resolver problemas reales.
       </p>
+
 
       <div class="hero__cta">
         <a tuiLink href="#projects">Ver proyectos</a>
@@ -156,7 +162,7 @@
   <section id="projects" class="section">
     <div class="section__head">
       <h2 class="section__title">Proyectos</h2>
-      <p class="section__hint">Implementaciones destacadas (repositorios, casos y prototipos).</p>
+      <p class="section__hint">Proyectos personales/academicos.</p>
     </div>
 
     <div class="grid3">
@@ -165,8 +171,25 @@
         <p class="card__text">{{ p.descripcion }}</p>
 
         <div class="project__actions">
-          <a tuiLink [href]="p.link" target="_blank" rel="noreferrer">Repositorio</a>
+          <a
+            *ngIf="!p.privado"
+            tuiLink
+            [href]="p.link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Repositorio
+          </a>
+          <span
+            *ngIf="p.privado"
+            tuiBadge
+            appearance="secondary"
+          >
+            Repositorio privado
+          </span>
         </div>
+
+        
       </article>
     </div>
   </section>
@@ -181,7 +204,7 @@
     <div class="card contact">
       <p class="card__text">
         📩 Email: <strong>deelanmaldonado9@gmail.com</strong><br />
-        📍 Chile · Remoto / Presencial
+        📍 Santiago, Chile · Remoto / Presencial
       </p>
 
       <div class="hero__cta">

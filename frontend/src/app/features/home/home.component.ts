@@ -29,28 +29,32 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   proyectos = [
     {
-      titulo: 'Rendiflow (App de gestión de boletas/gastos)',
-      descripcion:
-        'Plataforma para captura y gestión de rendiciones: app móvil (React Native/Expo) + backend (Python Clean Architecture) + ETL diario en contenedores y tableros BI. Enfoque en arquitectura, métricas y automatización.',
-      link: 'https://github.com/tori-labs/rendiflow',
+    titulo: 'Rendiflow (App de rendición de gastos con IA)',
+    descripcion:
+      'Aplicación móvil para digitalizar y automatizar rendiciones de gastos mediante IA. App desarrollada en React Native conectada a una API REST en Go (Golang), con OCR y modelos LLM (LLAMA) para extracción automática de datos. Infraestructura contenerizada con Docker y Kubernetes, base de datos PostgreSQL y observabilidad con Middleware.io. Enfoque en arquitectura escalable, automatización y trazabilidad de gastos.',
+    link: 'Repositorio privado',
+    privado : true,
     },
     {
-      titulo: 'App Chuck (Flutter)',
+      titulo: 'App Chuck Norris (Frases de Chuck Norris)',
       descripcion:
         'Aplicación móvil en Flutter que consume una API de frases de Chuck Norris y una API de traducción para mostrar frases en español. Incluye interfaz simple y almacenamiento local.',
       link: 'https://github.com/pate9596/app_chuck',
+      privado : false,
     },
     {
-      titulo: 'Ferretería eCommerce (Django + SQLite)',
+      titulo: 'Ferretería eCommerce',
       descripcion:
-        'E-commerce universitario con integración de APIs para cambio de moneda y WebPay para aprobación de pagos. Incluye autenticación de usuarios y restablecimiento de contraseña vía email.',
+        'E-commerce universitario con integración de APIs para cambio de moneda y WebPay para aprobación de pagos. Incluye autenticación de usuarios y restablecimiento de contraseña vía email. (Frontend: Html, CSS, JavaScript.) (Backend: Django + SQLite).',
       link: 'https://github.com/pate9596/Ferremas',
+      privado : false,
     },
     {
-      titulo: 'Sistema de Gestión de Notas (Full Stack .NET + React + Vite + MongoDB)',
+      titulo: 'Sistema de Gestión de Notas ',
       descripcion:
         'App web para gestión de notas personales con Google OAuth/registro de usuarios. Backend .NET 9 (API REST + JWT) y frontend React + Vite + TypeScript, con CRUD por usuario y persistencia en MongoDB.',
       link: 'https://github.com/pate9596/GestionnNotas',
+      privado : false,
     },
   ];
 
