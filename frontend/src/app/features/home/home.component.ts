@@ -4,6 +4,8 @@ import { isPlatformBrowser } from '@angular/common';
 
 import { TuiButton, TuiTitle, TuiLink } from '@taiga-ui/core';
 import { TuiBadge } from '@taiga-ui/kit';
+import { truncate } from 'node:fs/promises';
+import { link } from 'node:fs';
 
 type Particle = { x: number; y: number; r: number; dx: number; dy: number };
 
@@ -14,7 +16,6 @@ type Particle = { x: number; y: number; r: number; dx: number; dy: number };
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-
 export class HomeComponent implements OnInit, OnDestroy {
   stack = [
     { label: 'Lenguajes', items: ['Java', 'JavaScript', 'Python', 'HTML', 'CSS'] },
@@ -23,47 +24,81 @@ export class HomeComponent implements OnInit, OnDestroy {
     { label: 'Bases de datos', items: ['MySQL', 'Oracle', 'MongoDB'] },
     { label: 'BI / Dashboards', items: ['Looker Studio', 'Power BI'] },
     { label: 'Tooling / DevOps', items: ['Docker', 'Git / GitHub'] },
-
   ];
-
 
   proyectos = [
     {
-    titulo: 'Rendiflow (App de rendición de gastos con IA)',
-    descripcion:
-      'Aplicación móvil para digitalizar y automatizar rendiciones de gastos mediante IA. App desarrollada en React Native conectada a una API REST en Go (Golang), con OCR y modelos LLM (LLAMA) para extracción automática de datos. Infraestructura contenerizada con Docker y Kubernetes, base de datos PostgreSQL y observabilidad con Middleware.io. Enfoque en arquitectura escalable, automatización y trazabilidad de gastos.',
-    link: 'Repositorio privado',
-    privado : true,
+      titulo: 'Rendiflow',
+      descripcion:
+        'Aplicación móvil para digitalizar y automatizar rendiciones de gastos mediante IA. App desarrollada en React Native conectada a una API REST en Go (Golang), con OCR y modelos LLM (LLAMA) para extracción automática de datos. Infraestructura contenerizada con Docker y Kubernetes, base de datos PostgreSQL y observabilidad con Middleware.io.',
+      imagen: 'assets/images/proyectos/rendiflowj.png',
+      orientacion: 'portrait',
+      tecnologias: ['React Native', 'Go', 'PostgreSQL', 'Docker', 'Kubernetes', 'AI/ML'],
+      link: 'Repositorio privado',
+      privado: true,
     },
     {
-      titulo: 'App Chuck Norris (Frases de Chuck Norris)',
+      titulo: 'App Chuck Norris',
       descripcion:
         'Aplicación móvil en Flutter que consume una API de frases de Chuck Norris y una API de traducción para mostrar frases en español. Incluye interfaz simple y almacenamiento local.',
+      imagen: 'assets/images/proyectos/appchuck.jpeg',
+      orientacion: 'portrait',
+      tecnologias: ['Flutter', 'Dart', 'API REST'],
       link: 'https://github.com/pate9596/app_chuck',
-      privado : false,
+      privado: false,
     },
     {
       titulo: 'Ferretería eCommerce',
       descripcion:
-        'E-commerce universitario con integración de APIs para cambio de moneda y WebPay para aprobación de pagos. Incluye autenticación de usuarios y restablecimiento de contraseña vía email. (Frontend: Html, CSS, JavaScript.) (Backend: Django + SQLite).',
+        'E-commerce universitario con integración de APIs para cambio de moneda y WebPay para aprobación de pagos. Incluye autenticación de usuarios y restablecimiento de contraseña vía email.',
+      imagen: 'assets/images/proyectos/ferremas.png',
+      orientacion: 'landscape',
+      tecnologias: ['Django', 'JavaScript', 'SQLite', 'WebPay'],
       link: 'https://github.com/pate9596/Ferremas',
-      privado : false,
+      privado: false,
     },
     {
-      titulo: 'Sistema de Gestión de Notas ',
+      titulo: 'Sistema de Gestión de Notas',
       descripcion:
         'App web para gestión de notas personales con Google OAuth/registro de usuarios. Backend .NET 9 (API REST + JWT) y frontend React + Vite + TypeScript, con CRUD por usuario y persistencia en MongoDB.',
+      imagen: 'assets/images/proyectos/notas.png',
+      orientacion: 'landscape',
+      tecnologias: ['.NET', 'React', 'TypeScript', 'MongoDB', 'JWT'],
       link: 'https://github.com/pate9596/GestionnNotas',
-      privado : false,
+      privado: false,
+    },
+    {
+      titulo: 'Plataforma Web de Gestión y Difusión – Misión Puente Alto ',
+      descripcion:
+        'Plataforma web para la gestión y difusión de contenido multimedia de una misión cristiana en proceso de desarrollo. Permite visualizar galerías y documentos públicos, y administrar imágenes, videos y PDFs mediante autenticación segura. Desarrollada con React + Vite y Django REST Framework, usando JWT y arquitectura desacoplada.',
+      imagen: 'assets/images/proyectos/ppagcris.png',
+      orientacion: 'landscape',
+      tecnologias: ['Django', 'React', 'TypeScript', 'SqlLite', 'JWT','Vercel','PythonAnywhere'],
+      link: 'https://mision-sembradores-puente-alto.vercel.app/',
+      privado: false,
+    },
+    {
+      titulo: 'calculadora-academica',
+      descripcion:
+        'Aplicación académica móvil para el cálculo de porcentajes, Fracciones promedios ponderados y estimación de notas mínimas en evaluaciones, desarrollada con React Native, Expo y UI Kitten.',
+      imagen: 'assets/images/proyectos/calculadora.png',
+      orientacion: 'landscape',
+      tecnologias: ['React Native', 'Expo', 'UI Kitten'],
+      link: 'https://github.com/pate9596/calculadora-academica',
+      privado: false,
+
+      app: {
+        tipo: 'apk', // 'apk' | 'play'
+        url: 'assets/apps/app-universal-realease.apk',
+      }
     },
   ];
-
 
   experiencia = [
     {
       puesto: 'Practicante / Analista BI - Datos',
       empresa: 'Televisión Nacional de Chile (TVN)',
-      duracion: 'Agosto 2025 - Octubre 2025', // pon mes/año real
+      duracion: 'Agosto 2024 - Octubre 2024',
       descripcion:
         '• Integración y migración de datos (p. ej., Talana HR API → ETL en Python) hacia BD relacionales.\n' +
         '• Modelado y preparación de datos para análisis y visualización (Looker Studio).\n' +
@@ -79,10 +114,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         '• Gestioné tareas con Microsoft Planner bajo metodologías ágiles (Scrum y Kanban).\n' +
         '• Estudié metodologías de construcción como BIM y Gemelos Digitales (Digital Twin).',
     },
-
   ];
-
-  
 
   private canvas: HTMLCanvasElement | null = null;
   private ctx: CanvasRenderingContext2D | null = null;

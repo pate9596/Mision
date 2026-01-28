@@ -2,12 +2,11 @@
 
 <header class="nav">
   <div class="nav__inner">
-   
     <a class="brand" href="#top">
       <img src="../../../assets/images/icono.png" alt="Logo" class="brand_icon"/>
       <span>Portafolio</span>
     </a>
-    
+
     <nav class="nav__links">
       <a class="nav__link" href="#about">Perfil</a>
       <a class="nav__link" href="#exp">Experiencia</a>
@@ -16,8 +15,16 @@
     </nav>
 
     <div class="nav__social">
-      <a class="nav__icon" href="https://github.com/pate9596" target="_blank" rel="noreferrer">GitHub</a>
-      <a class="nav__icon" href="https://www.linkedin.com/in/deelan-maldonado-vergara-812734235" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="nav__icon" href="https://github.com/pate9596" target="_blank" rel="noreferrer">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <a class="nav__icon" href="https://www.linkedin.com/in/deelan-maldonado-vergara-812734235" target="_blank" rel="noreferrer">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
     </div>
   </div>
 </header>
@@ -26,133 +33,200 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__content">
-      <img class="avatar" src="assets/images/foto.jpg" alt="Foto de perfil" />
+      <div class="avatar-wrapper">
+        <img class="avatar" src="assets/images/foto.jpg" alt="Foto de perfil" />
+        <div class="avatar-glow"></div>
+      </div>
 
-      <h1 class="hero__title">Hola, soy <span class="accent">Deelan</span></h1>
+      <h1 class="hero__title">
+        Hola, soy <span class="accent gradient-text">Deelan</span>
+      </h1>
       <p class="hero__subtitle">
-        Ingeniero en Informática recién egresado, enfocado en desarrollo web y móvil.
+        Ingeniero en Informática, enfocado en desarrollo web y móvil.
         Me interesa construir aplicaciones completas, con buenas prácticas, calidad de código
         y soluciones orientadas a resolver problemas reales.
       </p>
 
-
       <div class="hero__cta">
-        <a tuiLink href="#projects">Ver proyectos</a>
-        <a tuiLink class="link" href="#contact">Contacto</a>
-        <a tuiLink href="assets/documentos/cv_deelan_2.pdf" target="_blank" rel="noreferrer">Ver Curriculum</a>
+        <a tuiLink href="#projects" class="cta-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/>
+          </svg>
+          Ver proyectos
+        </a>
+        <a tuiLink class="cta-secondary" href="#contact">Contacto</a>
+        <a tuiLink href="assets/documentos/cv_deelan_2.pdf" target="_blank" rel="noreferrer" class="cta-outline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          Curriculum
+        </a>
       </div>
-
     </div>
   </section>
 
   <!-- SOBRE MI -->
   <section id="about" class="section">
     <div class="section__head">
-      <h2 class="section__title">Perfil</h2>
+      <h2 class="section__title">
+        <span class="section__number">01.</span> Perfil
+      </h2>
       <p class="section__hint">Enfoque, intereses y forma de trabajo.</p>
     </div>
 
     <div class="grid2">
-      <div class="card">
+      <div class="card card--hover">
+        <div class="card__icon">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
         <h3 class="card__title">Sobre mí</h3>
         <p class="card__text">
-          Soy Ingeniero en Informática recién egresado, enfocado en desarrollo web tanto en
-          <strong>frontend</strong> (la parte visual y experiencia del usuario) como en
-          <strong>backend</strong> (lógica, APIs y manejo de datos). Me interesa crear aplicaciones
-          completas que funcionen bien, sean claras para el usuario y estén construidas con buenas prácticas.
+          Soy Ingeniero en Informática titulado, especializado en desarrollo <strong>full-stack</strong>
+          con enfoque en aplicaciones web y móviles. Mi experiencia abarca tanto el <strong>frontend</strong>,
+          donde construyo interfaces intuitivas y responsivas, como el <strong>backend</strong>, desarrollando
+          APIs robustas y arquitecturas escalables.
           <br /><br />
-          Durante mi formación trabajé en proyectos que van desde la construcción de interfaces en React y Angular,
-          hasta el diseño de APIs y la integración con bases de datos usando .NET, Django y MongoDB/MySQL.
-          También he aplicado pruebas y análisis para asegurar calidad y mejorar decisiones del producto.
+          He trabajado en proyectos que integran <strong>inteligencia artificial</strong>, procesamiento de datos,
+          automatización de flujos de trabajo y análisis de información. También tengo experiencia en
+          <strong>análisis de negocio</strong> y <strong>Business Intelligence</strong>, donde he transformado
+          datos en insights accionables para la toma de decisiones estratégicas.
           <br /><br />
-          En mi práctica en TVN participé en tareas de flujos de información y análisis, reforzando mi interés
-          por desarrollar soluciones que aporten valor real.
-          <br /><br />
-          Estoy comprometido con la mejora continua y con aprender tecnologías nuevas para aportar al crecimiento
-          de cada proyecto en el que participo.
+          Me apasiona escribir código limpio, aplicar buenas prácticas de desarrollo y aprender continuamente
+          nuevas tecnologías para crear soluciones que generen valor real y resuelvan problemas complejos de
+          manera eficiente.
         </p>
       </div>
 
-
-    <div class="card">
-      <h3 class="card__title">Stack / habilidades</h3>
-
-      <div class="stack">
-        <div class="stack__group">
-          <div class="stack__label">Lenguajes</div>
-          <div class="chips chips--wrap">
-            <span class="chip">Java</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">Python</span>
-            <span class="chip">HTML</span>
-            <span class="chip">CSS</span>
-          </div>
+      <div class="card card--hover">
+        <div class="card__icon">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
         </div>
+        <h3 class="card__title">Stack / habilidades</h3>
 
-        <div class="stack__group">
-          <div class="stack__label">Frontend</div>
-          <div class="chips chips--wrap">
-            <span class="chip">Angular</span>
-            <span class="chip">React</span>
-            <span class="chip">React Native</span>
-            <span class="chip">Expo</span>
-            <span class="chip">Vite</span>
+        <div class="stack">
+          <div class="stack__group">
+            <div class="stack__label">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              Lenguajes
+            </div>
+            <div class="chips chips--wrap">
+              <span class="chip">Java</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Python</span>
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+            </div>
           </div>
-        </div>
 
-        <div class="stack__group">
-          <div class="stack__label">Backend</div>
-          <div class="chips chips--wrap">
-            <span class="chip">.NET</span>
-            <span class="chip">Django</span>
+          <div class="stack__group">
+            <div class="stack__label">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              Frontend
+            </div>
+            <div class="chips chips--wrap">
+              <span class="chip">Angular</span>
+              <span class="chip">React</span>
+              <span class="chip">React Native</span>
+              <span class="chip">Expo</span>
+              <span class="chip">Vite</span>
+            </div>
           </div>
-        </div>
 
-        <div class="stack__group">
-          <div class="stack__label">Bases de datos</div>
-          <div class="chips chips--wrap">
-            <span class="chip">MySQL</span>
-            <span class="chip">Oracle</span>
-            <span class="chip">MongoDB</span>
+          <div class="stack__group">
+            <div class="stack__label">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              Backend
+            </div>
+            <div class="chips chips--wrap">
+              <span class="chip">.NET</span>
+              <span class="chip">Django</span>
+            </div>
           </div>
-        </div>
 
-        <div class="stack__group">
-          <div class="stack__label">BI / Dashboards</div>
-          <div class="chips chips--wrap">
-            <span class="chip">Looker Studio</span>
-            <span class="chip">Power BI</span>
+          <div class="stack__group">
+            <div class="stack__label">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              Bases de datos
+            </div>
+            <div class="chips chips--wrap">
+              <span class="chip">MySQL</span>
+              <span class="chip">Oracle</span>
+              <span class="chip">MongoDB</span>
+            </div>
           </div>
-        </div>
-        <div class="stack__group">
-          <div class="stack__label">Tooling / DevOps</div>
-          <div class="chips chips--wrap">
-            <span class="chip">Docker</span>
-            <span class="chip">Git / GitHub</span>
+
+          <div class="stack__group">
+            <div class="stack__label">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              BI / Dashboards
+            </div>
+            <div class="chips chips--wrap">
+              <span class="chip">Looker Studio</span>
+              <span class="chip">Power BI</span>
+            </div>
+          </div>
+
+          <div class="stack__group">
+            <div class="stack__label">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              Tooling / DevOps
+            </div>
+            <div class="chips chips--wrap">
+              <span class="chip">Docker</span>
+              <span class="chip">Git / GitHub</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
     </div>
   </section>
 
   <!-- EXPERIENCIA -->
   <section id="exp" class="section">
     <div class="section__head">
-      <h2 class="section__title">Experiencia</h2>
+      <h2 class="section__title">
+        <span class="section__number">02.</span> Experiencia
+      </h2>
       <p class="section__hint">Prácticas y trabajo aplicado en entornos reales.</p>
     </div>
 
     <div class="timeline">
       <article class="tl-item" *ngFor="let e of experiencia">
         <div class="tl-dot"></div>
-        <div class="card tl-card">
+        <div class="card tl-card card--hover">
           <div class="tl-top">
             <h3 class="card__title">{{ e.puesto }}</h3>
-            <span class="muted">{{ e.duracion }}</span>
+            <span class="muted badge-date">{{ e.duracion }}</span>
           </div>
-          <div class="muted">{{ e.empresa }}</div>
+          <div class="muted company-name">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            {{ e.empresa }}
+          </div>
           <p class="card__text" style="white-space: pre-line;">{{ e.descripcion }}</p>
         </div>
       </article>
@@ -162,35 +236,66 @@
   <!-- PROYECTOS -->
   <section id="projects" class="section">
     <div class="section__head">
-      <h2 class="section__title">Proyectos</h2>
-      <p class="section__hint">Proyectos personales/academicos.</p>
+      <h2 class="section__title">
+        <span class="section__number">03.</span> Proyectos
+      </h2>
+      <p class="section__hint">Proyectos personales y académicos destacados.</p>
     </div>
 
-    <div class="grid3">
-      <article class="card project" *ngFor="let p of proyectos">
-        <h3 class="card__title">{{ p.titulo }}</h3>
-        <p class="card__text">{{ p.descripcion }}</p>
-
-        <div class="project__actions">
-          <a
-            *ngIf="!p.privado"
-            tuiLink
-            [href]="p.link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Repositorio
-          </a>
-          <span
-            *ngIf="p.privado"
-            tuiBadge
-            appearance="secondary"
-          >
-            Repositorio privado
-          </span>
+    <div class="projects-grid">
+      <article class="project-card" *ngFor="let p of proyectos">
+        <div class="project-card__image" [attr.data-orientation]="p.orientacion">
+          <img [src]="p.imagen" [alt]="p.titulo" />
+          <div class="project-card__overlay">
+            <div class="project-card__tech">
+              <span class="tech-badge" *ngFor="let tech of p.tecnologias">{{ tech }}</span>
+            </div>
+          </div>
         </div>
 
-        
+        <div class="project-card__content">
+          <h3 class="project-card__title">{{ p.titulo }}</h3>
+          <p class="project-card__description">{{ p.descripcion }}</p>
+
+          <div class="project-card__footer">
+            <div class="project-card__actions">
+              <a
+                *ngIf="!p.privado"
+                tuiLink
+                [href]="p.link"
+                target="_blank"
+                rel="noreferrer"
+                class="project-link"
+              >
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Repositorio
+              </a>
+
+              <a
+                *ngIf="p.app?.tipo === 'apk'"
+                tuiLink
+                [href]="p.app?.url"
+                download
+                class="project-link project-link--apk"
+              >
+                📲 Descargar APK
+              </a>
+
+              <span
+                *ngIf="p.privado"
+                class="private-badge"
+              >
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                Privado
+              </span>
+            </div>
+          </div>
+        </div>
       </article>
     </div>
   </section>
@@ -198,37 +303,64 @@
   <!-- CONTACTO -->
   <section id="contact" class="section section--last">
     <div class="section__head">
-      <h2 class="section__title">Contacto</h2>
-      <p class="section__hint"></p>
+      <h2 class="section__title">
+        <span class="section__number">04.</span> Contacto
+      </h2>
+      <p class="section__hint">¿Hablamos? Estoy disponible para nuevas oportunidades.</p>
     </div>
 
-    <div class="card contact">
-      <p class="card__text">
-        📩 Email: <strong>deelanmaldonado9@gmail.com</strong><br />
-        📍 Santiago, Chile · Remoto / Presencial
-      </p>
+    <div class="card contact card--hover">
+      <div class="contact__grid">
+        <div class="contact__item">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <div>
+            <div class="contact__label">Email</div>
+            <strong>deelanmaldonado9@gmail.com</strong>
+          </div>
+        </div>
 
-      <div class="hero__cta">
-        <a tuiLink href="mailto:deelanmaldonado9@gmail.com">Enviar correo</a>
-        <a tuiLink href="https://github.com/pate9596" target="_blank" rel="noreferrer">GitHub</a>
-        <a tuiLink class="link" href="assets/documentos/cv_deelan_2.pdf" download>Descargar Curriculum</a>
+        <div class="contact__item">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div>
+            <div class="contact__label">Ubicación</div>
+            <strong>Santiago, Chile</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__cta" style="margin-top: 24px;">
+        <a tuiLink href="mailto:deelanmaldonado9@gmail.com" class="cta-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Enviar correo
+        </a>
+        <a tuiLink href="https://github.com/pate9596" target="_blank" rel="noreferrer" class="cta-secondary">GitHub</a>
+        <a tuiLink class="cta-outline" href="assets/documentos/cv_deelan_2.pdf" download>Descargar CV</a>
       </div>
     </div>
   </section>
+
   <footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__left">
-      <span class="muted">
-        Built with <strong>Angular</strong> + <strong>Taiga UI</strong> · Deployed on <strong>Vercel</strong>
-      </span>
-    </div>
+    <div class="footer__inner">
+      <div class="footer__left">
+        <span class="muted">
+          Built with <strong>Angular</strong> + <strong>Taiga UI</strong> · Deployed on <strong>Vercel</strong>
+        </span>
+      </div>
 
-    <div class="footer__right">
-      <a tuiLink href="https://vercel.com" target="_blank" rel="noreferrer">Vercel</a>
-      <span class="muted">·</span>
-      <a tuiLink href="https://taiga-ui.dev" target="_blank" rel="noreferrer">Taiga UI</a>
+      <div class="footer__right">
+        <a tuiLink href="https://vercel.com" target="_blank" rel="noreferrer">Vercel</a>
+        <span class="muted">·</span>
+        <a tuiLink href="https://taiga-ui.dev" target="_blank" rel="noreferrer">Taiga UI</a>
+      </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 </main>
