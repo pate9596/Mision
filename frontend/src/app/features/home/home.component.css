@@ -558,7 +558,7 @@
   color: rgba(70, 120, 150, 0.8);
 }
 
-/* PROJECTS - MEJORADO */
+/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -590,7 +590,7 @@
   width: 100%;
   height: 280px;
   overflow: hidden;
-  background: rgba(15, 30, 45, 0.6); /* Fondo más oscuro */
+  background: rgba(15, 30, 45, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -604,7 +604,6 @@
   filter: brightness(0.9) saturate(1.1);
 }
 
-/* Ajuste para imágenes horizontales */
 .project-card__image img[style*="landscape"],
 .project-card__image.landscape img {
   object-fit: cover;
@@ -687,6 +686,7 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .project-link {
@@ -784,18 +784,47 @@
   gap: 12px;
 }
 
-/* RESPONSIVE */
+/* ============================================
+   RESPONSIVE - MEJORAS MÓVILES
+   ============================================ */
+
+/* Tablets y dispositivos medianos (768px - 1024px) */
+@media (max-width: 1024px) {
+  .section {
+    padding: 70px 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .hero__title {
+    font-size: clamp(36px, 6vw, 52px);
+  }
+}
+
+/* Tablets pequeñas (900px) */
 @media (max-width: 900px) {
+  .page {
+    padding-top: 64px;
+  }
+
   .grid2 {
     grid-template-columns: 1fr;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .nav__links {
     display: none;
+  }
+
+  .nav__social {
+    margin-left: auto;
   }
 
   .contact__grid {
@@ -804,10 +833,15 @@
 
   .section {
     padding: 60px 20px;
+    scroll-margin-top: 80px;
   }
 
   .section__title {
     font-size: 32px;
+  }
+
+  .section__number {
+    font-size: 18px;
   }
 
   .hero {
@@ -821,15 +855,16 @@
   }
 
   .hero__title {
-    font-size: clamp(28px, 8vw, 48px);
+    font-size: clamp(28px, 7vw, 48px);
   }
 
   .hero__subtitle {
     font-size: 16px;
+    line-height: 1.6;
   }
 
   .card {
-    padding: 20px;
+    padding: 22px;
   }
 
   .project-card__image {
@@ -839,17 +874,70 @@
   .tl-item {
     padding-left: 40px;
   }
+
+  .timeline::before {
+    left: 9px;
+  }
+
+  .tl-dot {
+    left: 4px;
+  }
 }
 
+/* Móviles grandes (700px) */
 @media (max-width: 700px) {
+  .page {
+    padding-top: 60px;
+  }
+
+  .nav__inner {
+    padding: 10px 16px;
+  }
+
+  .brand_icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  .nav__social {
+    padding-left: 8px;
+    gap: 10px;
+  }
+
+  .nav__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .footer__inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer__right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 40px 16px 28px;
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+  }
+
+  .avatar-glow {
+    inset: -15px;
+    filter: blur(20px);
   }
 
   .hero__cta {
-    flex-direction: column;
-    width: 100%;
+    margin-top: 28px;
+    gap: 12px;
   }
 
   .cta-primary,
@@ -857,35 +945,33 @@
   .cta-outline {
     width: 100%;
     justify-content: center;
-  }
-
-  .nav__inner {
-    padding: 10px 16px;
-  }
-
-  .nav__social {
-    padding-left: 10px;
+    padding: 12px 24px;
   }
 
   .section {
-    padding: 48px 16px;
+    padding: 50px 16px;
   }
 
   .section__title {
     font-size: 28px;
   }
 
-  .section__number {
-    font-size: 18px;
+  .section__hint {
+    font-size: 15px;
   }
 
   .card__title {
     font-size: 20px;
   }
 
+  .card__text {
+    font-size: 14px;
+  }
+
   .tl-top {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
 
   .badge-date {
@@ -895,47 +981,493 @@
   .project-card__image {
     height: 220px;
   }
-}
-
-@media (max-width: 400px) {
-  .hero {
-    padding: 36px 16px 24px;
-  }
-
-  .avatar {
-    width: 100px;
-    height: 100px;
-  }
-
-  .brand_icon {
-    width: 30px;
-    height: 30px;
-  }
-
-  .section {
-    padding: 40px 12px;
-  }
-
-  .card {
-    padding: 16px;
-  }
 
   .project-card__content {
     padding: 20px;
   }
 
+  .project-card__title {
+    font-size: 19px;
+  }
+
+  .project-card__description {
+    font-size: 13px;
+  }
+
+  .project-card__actions {
+    gap: 10px;
+  }
+
+  .project-link {
+    font-size: 12px;
+    padding: 7px 14px;
+  }
+
+  .chips {
+    gap: 8px;
+  }
+
+  .chip {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .tech-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+/* Móviles medianos (500px) */
+@media (max-width: 500px) {
+  .page {
+    padding-top: 56px;
+  }
+
+  .hero {
+    padding: 32px 14px 24px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-width: 2px;
+  }
+
+  .hero__title {
+    font-size: clamp(26px, 8vw, 38px);
+    line-height: 1.15;
+  }
+
+  .hero__subtitle {
+    font-size: 15px;
+    margin-top: 16px;
+  }
+
   .hero__cta {
+    margin-top: 24px;
     gap: 10px;
   }
 
   .cta-primary,
   .cta-secondary,
   .cta-outline {
-    padding: 10px 20px;
+    padding: 11px 20px;
     font-size: 14px;
+  }
+
+  .section {
+    padding: 44px 14px;
+  }
+
+  .section__head {
+    margin-bottom: 36px;
+  }
+
+  .section__number {
+    font-size: 17px;
+    margin-right: 10px;
+  }
+
+  .section__title {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .card__icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 14px;
+  }
+
+  .card__title {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .project-card {
+    border-radius: 16px;
   }
 
   .project-card__image {
     height: 200px;
+  }
+
+  .project-card__content {
+    padding: 18px;
+  }
+
+  .project-card__title {
+    font-size: 18px;
+  }
+
+  .project-card__overlay {
+    padding: 16px;
+  }
+
+  .tl-item {
+    padding-left: 36px;
+  }
+
+  .timeline::before {
+    left: 8px;
+  }
+
+  .tl-dot {
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    top: 26px;
+  }
+
+  .contact__item {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .contact__item svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Móviles pequeños (400px) */
+@media (max-width: 400px) {
+  .page {
+    padding-top: 52px;
+  }
+
+  .nav__inner {
+    padding: 9px 12px;
+  }
+
+  .brand {
+    font-size: 15px;
+  }
+
+  .brand_icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+  }
+
+  .nav__social {
+    gap: 8px;
+    padding-left: 6px;
+  }
+
+  .nav__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero {
+    padding: 28px 12px 20px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .avatar-glow {
+    inset: -12px;
+    filter: blur(18px);
+  }
+
+  .hero__title {
+    font-size: clamp(24px, 9vw, 34px);
+  }
+
+  .hero__subtitle {
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .hero__cta {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .cta-primary,
+  .cta-secondary,
+  .cta-outline {
+    padding: 10px 18px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .section {
+    padding: 40px 12px;
+  }
+
+  .section__head {
+    margin-bottom: 32px;
+  }
+
+  .section__number {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  .section__title {
+    font-size: 24px;
+  }
+
+  .section__hint {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+
+  .card__text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .project-card {
+    border-radius: 14px;
+  }
+
+  .project-card__image {
+    height: 180px;
+  }
+
+  .project-card__content {
+    padding: 16px;
+  }
+
+  .project-card__title {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .project-card__description {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .project-card__footer {
+    margin-top: 16px;
+    padding-top: 14px;
+  }
+
+  .project-card__actions {
+    gap: 8px;
+  }
+
+  .project-link {
+    padding: 6px 12px;
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+  .private-badge {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .project-card__overlay {
+    padding: 14px;
+  }
+
+  .tech-badge {
+    font-size: 9px;
+    padding: 3px 7px;
+  }
+
+  .chips {
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .chip {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .stack {
+    gap: 16px;
+  }
+
+  .stack__label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .tl-item {
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    left: 7px;
+  }
+
+  .tl-dot {
+    left: 2px;
+    width: 9px;
+    height: 9px;
+    top: 24px;
+  }
+
+  .tl-card {
+    padding-top: 16px;
+  }
+
+  .badge-date {
+    padding: 3px 10px;
+    font-size: 11px;
+  }
+
+  .company-name {
+    margin: 6px 0 12px;
+    font-size: 14px;
+  }
+
+  .contact__item {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .contact__label {
+    font-size: 11px;
+  }
+
+  .footer {
+    padding: 28px 12px 32px;
+  }
+
+  .footer__inner {
+    padding-top: 20px;
+    font-size: 13px;
+  }
+
+  .muted {
+    font-size: 12px;
+  }
+}
+
+/* Móviles muy pequeños (360px y menos) */
+@media (max-width: 360px) {
+  .hero__title {
+    font-size: clamp(22px, 10vw, 30px);
+  }
+
+  .section__title {
+    font-size: 22px;
+  }
+
+  .card__title {
+    font-size: 17px;
+  }
+
+  .project-card__title {
+    font-size: 16px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .project-card__image {
+    height: 160px;
+  }
+}
+
+/* Optimización táctil para móviles */
+@media (hover: none) and (pointer: coarse) {
+  /* Aumentar áreas táctiles */
+  .nav__link,
+  .nav__icon,
+  .cta-primary,
+  .cta-secondary,
+  .cta-outline,
+  .project-link,
+  .chip {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Desactivar efectos hover en móviles táctiles */
+  .card--hover:hover,
+  .project-card:hover {
+    transform: none;
+  }
+
+  /* Activar efectos en tap */
+  .card--hover:active,
+  .project-card:active {
+    transform: scale(0.98);
+  }
+
+  .cta-primary:active,
+  .cta-secondary:active,
+  .cta-outline:active,
+  .project-link:active,
+  .chip:active {
+    transform: scale(0.96);
+  }
+}
+
+/* Modo oscuro automático (respeta preferencias del sistema) */
+@media (prefers-color-scheme: dark) {
+  /* Ya está optimizado para modo oscuro */
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+  .card,
+  .project-card {
+    border-width: 2px;
+  }
+
+  .nav {
+    border-bottom-width: 2px;
+  }
+
+  .chip,
+  .badge-date,
+  .tech-badge {
+    border-width: 2px;
+  }
+}
+
+/* Reducir movimiento para usuarios con preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .avatar-glow {
+    animation: none;
+  }
+
+  .gradient-text {
+    animation: none;
   }
 }
