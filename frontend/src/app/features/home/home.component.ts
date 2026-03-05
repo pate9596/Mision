@@ -74,8 +74,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       imagen: 'assets/images/proyectos/ppagcris.png',
       orientacion: 'landscape',
       tecnologias: ['Django', 'React', 'TypeScript', 'SqlLite', 'JWT','Vercel','PythonAnywhere'],
-      link: 'https://mision-sembradores-puente-alto.vercel.app/',
-      privado: false,
+      link: '',
+      web: 'https://mision-sembradores-puente-alto.vercel.app/',
+      privado: true,
+
     },
     {
       titulo: 'calculadora-academica',
