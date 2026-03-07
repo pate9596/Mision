@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
       app: {
         tipo: 'apk', // 'apk' | 'play'
-        url: 'assets/apps/app-universal-realease.apk',
+        url: 'assets/apps/CalculadoraApp.apk',
       }
     },
   ];
