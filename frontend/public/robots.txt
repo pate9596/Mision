@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://deelan-maldonado.vercel.app/sitemap.xml
